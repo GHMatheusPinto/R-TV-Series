@@ -21,3 +21,5 @@ names(tv)
 num <- as.numeric(tv$IMDb)
 
 hist(tv, xlab = num, main = "teste")
+
+mean(top5)

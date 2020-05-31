@@ -53,9 +53,9 @@ media_notas <- na.omit(tv$IMDb)
 mean(media_notas)
 ```
 
+Qual é a média das cinco melhores séries?
 
-
-
-
-
+```{r}
+mean(top5)
+```
 

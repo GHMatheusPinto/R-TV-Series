@@ -1,0 +1,61 @@
+---
+title: "Analisando as séries"
+output: html_notebook
+---
+
+Instalando os componentes
+
+```{r}
+install.packages("dplyr")
+install.packages("ggplot2")
+library(dplyr)
+library(ggplot2)
+```
+
+Lendo o dataset
+
+```{r}
+tv <- read.csv("/Users/matheus/Documents/R/tv_shows.csv")
+```
+
+Obtendo informação dos dados
+
+```{r}
+summary(tv)
+str(tv)
+```
+
+Plotando a quantidade de séries por faixa etária
+
+```{r}
+ggplot(tv, aes(y=as.factor(Age) )) +
+  geom_bar(color="blue", fill=rgb(0.1,0.4,0.5,0.7) )
+```
+
+Quantidade de séries por ano
+
+```{r}
+ggplot(tv, aes(y=as.factor(Year) )) +
+  geom_bar(color="blue", fill=rgb(0.1,0.4,0.5,0.7) )
+```
+
+Descobrindo as séries com as melhores notas (top 5)
+
+```{r}
+top5 <- head(tv$IMDb)
+sort(top5, decreasing = TRUE)
+```
+
+Qual é a média de notas de todas as séries?
+
+```{r}
+media_notas <- na.omit(tv$IMDb)
+mean(media_notas)
+```
+
+
+
+
+
+
+

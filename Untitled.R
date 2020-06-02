@@ -23,3 +23,8 @@ num <- as.numeric(tv$IMDb)
 hist(tv, xlab = num, main = "teste")
 
 mean(top5)
+
+ggplot(tv, aes(x = IMDb)) + 
+  geom_bar()
+
+mais = tv%>%filter(Age=="18+")%>%select(2,3)

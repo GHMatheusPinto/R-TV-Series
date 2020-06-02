@@ -59,3 +59,9 @@ Qual é a média das cinco melhores séries?
 mean(top5)
 ```
 
+Plotando um gráfico com a quantidade de filmes por média no IMDb
+
+```{r}
+ggplot(tv, aes(x = IMDb)) + 
+  geom_bar()
+```

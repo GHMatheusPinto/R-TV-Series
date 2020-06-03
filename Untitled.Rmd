@@ -15,7 +15,7 @@ library(ggplot2)
 Lendo o dataset
 
 ```{r}
-tv <- read.csv("/Users/matheus/Documents/R/tv_shows.csv")
+tv <- read.csv("/Users/matheus/Documents/R/Series/tv_shows.csv")
 ```
 
 Obtendo informação dos dados

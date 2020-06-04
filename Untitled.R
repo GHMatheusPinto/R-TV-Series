@@ -28,3 +28,10 @@ ggplot(tv, aes(x = IMDb)) +
   geom_bar()
 
 mais = tv%>%filter(Age=="18+")%>%select(2,3)
+
+IMDb <- na.omit(tv$IMDb)
+filter(tv, IMDb>="8.0")
+
+ggplot(tv, aes(x=as.factor(tv$Age), y=tv$IMDb)) + 
+  geom_boxplot(fill="slateblue", alpha=0.2) + 
+  xlab("Faixa etária") + ylab("Nota no IMDb")

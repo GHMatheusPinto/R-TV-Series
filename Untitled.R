@@ -1,3 +1,5 @@
+#meu rascunho para jogar no markdown
+
 ggplot(tv, aes(x=as.factor(Year), y=top5 )) +
   geom_bar(color="blue", fill=rgb(0.1,0.4,0.5,0.7) )
 
@@ -52,14 +54,17 @@ serv_disney = tv%>%filter(Disney.=="1")%>%select(2,3,4,5)
 serv_disney
 count(serv_disney)
 
+med_netflix <- na.omit(tv%>%filter(Netflix=="1"))
+med_netflix <- mean(med_netflix$IMDb)
 
+med_prime <- na.omit(tv%>%filter(Prime.Video=="1"))
+med_prime <- mean(med_prime$IMDb)
 
+med_hulu <- na.omit(tv%>%filter(Hulu=="1"))
+med_hulu <- mean(med_hulu$IMDb)
 
+med_disney <- na.omit(tv%>%filter(Disney.=="1"))
+med_disney <- mean(med_disney$IMDb)
 
-
-
-
-
-
-
-
+medias_serv = c("med_netlix", "med_prime", "med_hulu", "med_disney")
+medias_serv

@@ -1,6 +1,7 @@
 ---
 title: "Analisando as séries"
-output: html_notebook
+output:
+  pdf_document: default
 ---
 
 Instalando os componentes
@@ -118,7 +119,16 @@ med_disney <- na.omit(tv%>%filter(Disney.=="1"))
 mean(med_disney$IMDb)
 ```
 
+Barplot com a média de todas as notas do IMDb por serviço
 
+```{r}
+my_bar <- barplot(medias$Medias , border = F , names.arg = medias$Servicos , 
+                  las = 2 , 
+                  col = c(rgb(0.3, 0.1, 0.4, 0.6) , rgb(0.3, 0.5, 0.4, 0.6) , rgb(0.3, 0.9, 0.4, 0.6) ,  rgb(0.3, 0.9, 0.4, 0.6)) , 
+                  ylim = c(0, 10) , 
+                  main = "")
+text(my_bar, round(medias$Medias, 2)+0.4 , paste(round(medias$Medias, 2), sep = ""), cex = 1)
+```
 
 
 

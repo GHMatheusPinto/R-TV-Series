@@ -68,3 +68,24 @@ med_disney <- mean(med_disney$IMDb)
 
 medias_serv = c("med_netlix", "med_prime", "med_hulu", "med_disney")
 medias_serv
+
+
+# Create data
+medias <- data.frame(
+  Servicos=c("Netflix","Prime Video","Hulu","Disney") ,  
+  Medias=c(med_netflix, med_prime, med_hulu, med_disney)
+)
+
+# Barplot
+ggplot(medias,aes(x=Servicos, y=Medias), legend(x, y)) + 
+  geom_bar(stat = "identity", width=0.2)
+
+
+
+
+my_bar <- barplot(medias$Medias , border=F , names.arg=medias$Servicos , 
+                  las=2 , 
+                  col=c(rgb(0.3,0.1,0.4,0.6) , rgb(0.3,0.5,0.4,0.6) , rgb(0.3,0.9,0.4,0.6) ,  rgb(0.3,0.9,0.4,0.6)) , 
+                  ylim=c(0,10) , 
+                  main="" )
+text(my_bar, round(medias$Medias,2)+0.4 , paste(round(medias$Medias,2), sep="") ,cex=1)

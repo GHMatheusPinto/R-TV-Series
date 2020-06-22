@@ -130,7 +130,13 @@ my_bar <- barplot(medias$Medias , border = F , names.arg = medias$Servicos ,
 text(my_bar, round(medias$Medias, 2)+0.4 , paste(round(medias$Medias, 2), sep = ""), cex = 1)
 ```
 
+Qual é a moda de cada variável?
 
+```{r}
+median(na.omit(tv$IMDb))
+median(na.omit(tv$Year))
+median(na.omit(tv$Age))
+```
 
 
 

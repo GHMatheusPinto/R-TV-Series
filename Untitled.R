@@ -89,3 +89,9 @@ my_bar <- barplot(medias$Medias , border=F , names.arg=medias$Servicos ,
                   ylim=c(0,10) , 
                   main="" )
 text(my_bar, round(medias$Medias,2)+0.4 , paste(round(medias$Medias,2), sep="") ,cex=1)
+
+median(na.omit(tv$IMDb))
+median(na.omit(tv$Year))
+median(na.omit(tv$Age))
+
+mean(tv$Year)
